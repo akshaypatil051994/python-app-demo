@@ -1,13 +1,13 @@
-FROM python:3.6
+FROM tomcat 9.0.80
 
-MAINTAINER subbu  "subburepalle1@gmail.com"
+MAINTAINER manager
 
 COPY . /app
 
 WORKDIR /app
 
-EXPOSE 5000
+EXPOSE 8080
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["tomcat", "app.py"]
